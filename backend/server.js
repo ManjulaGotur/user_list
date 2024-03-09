@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const UserModel = require('/models/Users')
+const UserModel = require('./models/Users')
 
 const app = express();
 app.use(cors());
@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 5000;
 mongoose.connect('mongodb://127.0.0.1:27017/crud')
 
 
-app.get('/user-list',(req,res)=>{
-    UserModel.find({})
+app.get('/getUserlist',(req,res)=>{
+    UserModel.find()
     .then(users => res.json(users))
     .catch(err =>res.json(err))
 })
@@ -55,6 +55,6 @@ app.post("/createUsers",(req,res)=>{
 
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(3000, () => {
     console.log(`Server is running on port ${PORT}`);
 });

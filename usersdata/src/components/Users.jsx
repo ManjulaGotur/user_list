@@ -4,17 +4,17 @@ import axios from 'axios'
 
 
 const Users = () => {
- const [users,setUsers] =useState([])
-  // const users = [
+ const [userData,setUserData] =useState([])
+  // const userData = [
   //   { id: 1, name: 'kumaran', email: 'kumaran@gmail.com',  designation: "sales", phonenumber: '9865552588'},
   //   { id: 2, name: 'Manjula', email: 'mrg@gmail.com', designation: "hr",phonenumber:"6789345520" },
-   
   // ];
 
 
   useEffect(()=>{
-    axios.get('http://localhost:3001')
-    .then(result => setUsers(result.data))
+    axios.get('http://localhost:3000/getUserlist')
+    .then(result => {setUserData(result.data)
+    console.log("check22===",result)})
     .catch(err => console.log(err))
   },[])
 
@@ -25,7 +25,7 @@ const Users = () => {
     window.location.reload()})
     .catch(err => console.log(err))
   }
-  console.log("check==",users);
+  console.log("check==",userData);
   return (
     <div className='d-flex justify-content-center align-items-center bg-dark vh-100'>
       <div className='bg-white rounded w-50 p-3'>
@@ -42,7 +42,7 @@ const Users = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map(user => (
+            {/* {userData.map(user => (
               <tr key={user.id}>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
@@ -55,7 +55,7 @@ const Users = () => {
 
                 </td>
               </tr>
-            ))}
+            ))} */}
           </tbody>
         </table>
       </div>
