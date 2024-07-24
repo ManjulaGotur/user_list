@@ -1,25 +1,27 @@
 {
   "users": [
-    {
-      "name": "Aadrash",
-      "email": "greenja12@gmail.com",
-      "mobile": "9875462138",
-      "gender": "Male",
-      "designation": "hr",
-      "course": "BCA",
-      "date": "2023-03-22",
-      "id": "1"
-    },
+
     {
       "name": "kumaran",
       "email": "kumaran@gmail.com",
-      "mobile": 9865552588,
+      "mobile": "9865552588",
       "designation": "Sales",
       "gender": "Male",
       "course": "BE",
       "date": "2023-03-22",
-      "id": "2"
+      "id": "1"
     },
+    {
+"name": "kumariya",
+      "email": "kumarani@gmail.com",
+      "mobile": "9865752588",
+      "designation": "Sales",
+      "gender": "Female",
+      "course": "BE",
+      "date": "2023-03-22",
+      "id": "2"
+    }
+    ,
     {
       "name": "Manjula",
       "email": "mrg@gmail.com",
@@ -31,14 +33,24 @@
       "id": "3"
     },
     {
-        "name": "Pavan",
-        "email": "pavan@gmail.com",
-        "mobile": "9353726228",
-        "gender": "male",
-        "designation": "dev",
-        "course": "BCA",
-        "date": "2023-03-14",
-        "id": "5"
-      }
+      "name": "Pallavi",
+      "email": "pallu@gmail.com",
+      "mobile": "9353727448",
+      "gender": "Female",
+      "designation": "dev",
+      "course": "BCA",
+      "date": "2023-03-14",
+      "id": "4"
+    },
+    {
+      "name": "Pavan",
+      "email": "pavan@gmail.com",
+      "mobile": "9353726228",
+      "gender": "male",
+      "designation": "dev",
+      "course": "BCA",
+      "date": "2023-03-14",
+      "id": "5"
+    }
   ]
 }
