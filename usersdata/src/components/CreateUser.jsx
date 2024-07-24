@@ -12,7 +12,7 @@ const CreateUser = () => {
 
 const Submit = (e)=>{
     e.preventDefault();
-    axios.post('http://localhost:3001/createUsers', {name, email,designation,phonenumber})
+    axios.post('http://localhost:3001/createUser', {name, email,designation,phonenumber})
     .then(result =>{
         console.log(result)
         navigate('/user-list')
@@ -26,6 +26,8 @@ const Submit = (e)=>{
     <div className='bg-white p-3 rounded w-50'>
         <h2>Add-Users</h2>
     <form action=''  onSubmit={Submit} >
+
+      
       <div className='mb-2 '>
           <label htmlFor='name'><strong>Name:</strong></label>
           <input type="name"  placeholder='Enter your name'  name='name'
@@ -47,7 +49,7 @@ const Submit = (e)=>{
       </div>
       <div className='mb-2'>
           <label htmlFor='number'><strong>phonenumber:</strong></label>
-          <input type="phonenumber"  placeholder='Enter your number' name='number'
+          <input type="phonenumber"  placeholder='Enter your phonenumber' name='phonenumber'
          className='form-control rounded-0'  value = {phonenumber}  onChange={e => setPhonenumber(e.target.value)}  />
         
       </div>

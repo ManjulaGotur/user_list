@@ -15,7 +15,7 @@ const UpdateUser = () => {
 
  
   useEffect(()=>{
-    axios.get('http://localhost:3001/getUsers'+id)
+    axios.get('http://localhost:3001/getUser'+id)
     .then(result => {
     setName(result.data.name);
     setEmail(result.data.email)
@@ -27,7 +27,7 @@ const UpdateUser = () => {
 
 const Update = (e) =>{
   e.preventDefault()
-  axios.put('http://localhost:3001/updateUsers/'+id, {name, email,designation,phonenumber})
+  axios.put('http://localhost:3001/updateUser/'+id, {name, email,designation,phonenumber})
     .then(result =>{
         console.log(result)
         navigate('/user-list')
@@ -64,7 +64,7 @@ const Update = (e) =>{
       </div>
       <div className='mb-2'>
           <label htmlFor='number'><strong>phonenumber:</strong></label>
-          <input type="phonenumber"  placeholder='Enter your number' name='phonenumber'
+          <input type="phonenumber"  placeholder='Enter your phonenumber' name='phonenumber'
          className='form-control rounded-0'  value = {phonenumber}  onChange={e => setPhonenumber(e.target.value)} />
         
       </div>

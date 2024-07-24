@@ -7,26 +7,27 @@ const UserModel = require('./models/Users')
 const app = express();
 app.use(cors());
 app.use(express.json()); 
-const PORT = process.env.PORT || 5000;
-
-mongoose.connect('mongodb://127.0.0.1:27017/crud')
 
 
-app.get('/getUserlist',(req,res)=>{
+
+mongoose.connect('mongodb://127.0.0.1:27017/crud/users')
+
+
+app.get('/user-list',(req,res)=>{
     UserModel.find()
     .then(users => res.json(users))
     .catch(err =>res.json(err))
 })
 
 
-app.get('/getUsers/:id',(req,res) => {
+app.get('/getUser/:id',(req,res) => {
     const id =req.params.id;
     UserModel.findById({_id:id})
     .then(users => res.json(users))
     .catch(err =>res.json(err))
 })
 
-app.put('/updateUsers/:id', (req, res) => { 
+app.put('/updateUser/:id', (req, res) => { 
     const id = req.params.id;
     UserModel.findByIdAndUpdate({_id:id}, { 
         name: req.body.name, 
@@ -39,14 +40,14 @@ app.put('/updateUsers/:id', (req, res) => {
 });
 
 
-app.delete('/deleteUsers/:id',(req,res) => {
+app.delete('/deleteUser/:id',(req,res) => {
     const id =req.params.id;
     UserModel.findByIdAndDelete({_id:id})
     .then(users => res.json(users))
     .catch(err =>res.json(err))
 })
 
-app.post("/createUsers",(req,res)=>{
+app.post("/createUser",(req,res)=>{
     UserModel.create(req.body)
     .then(users =>res.json(users))
     .catch(err =>res.json(err))
@@ -55,6 +56,6 @@ app.post("/createUsers",(req,res)=>{
 
 
 // Start the server
-app.listen(3000, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(3002, () => {
+    console.log(`Server is running on port ${3002}`);
 });
