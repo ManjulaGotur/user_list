@@ -21,10 +21,12 @@ const Login = () => {
             <div className="border1 rounded-3  w-25 p-4 bg-white ">
              <h1 className="text-center ">Login Form</h1>
                 <div className='mb-3'>
-                    <label htmlFor="email" className="m-2" ><h4>UserName:</h4></label>
+                    <label htmlFor="email" className="m-2" ><h4>Username:</h4></label>
                     <input type="email" className="w-100 p-2 rounded" value={email} 
                     onChange={(e) => setEmail(e.target.value)} />
                 </div>
+
+
                 <div>
                     <label htmlFor="" className="m-2"><h4>Password:</h4></label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-100 p-2 rounded" />

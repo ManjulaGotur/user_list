@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Create = () => {
   const [values, setValues] = useState({
+   emp_id:'',
     name: '',
     email: '',
     
@@ -14,7 +15,7 @@ const Create = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/users', values)
+    axios.post('http://localhost:4000/users', values)
       .then(result => {
         console.log(result);
         navigate('/users-list');
@@ -28,15 +29,15 @@ const Create = () => {
         <h2>Add-Users</h2>
         <form onSubmit={handleSubmit}>
         <div className='mb-2 d-flex'>
-            <label htmlFor='number'className="m-2 w-25"><strong>Id :</strong></label>
-            <input type="number" name='name' placeholder='Enter your number'
-              className='form-control p-2 rounded' value={values.id}
-              onChange={e => setValues({ ...values, id: e.target.value })} />
+            <label htmlFor='empid'className="m-2 w-25"><strong>EmpId :</strong></label>
+            <input type="text" name='empid' placeholder='Enter your empid'
+              className='form-control p-2 rounded' value={values.emp_id}
+              onChange={e => setValues({ ...values, emp_id: e.target.value })} />
           </div>
           
           <div className='mb-2 d-flex'>
             <label htmlFor='name'className="m-2 w-25"><strong>Name :</strong></label>
-            <input type="name" name='name' placeholder='Enter your name'
+            <input type="text" name='name' placeholder='Enter your name'
               className='form-control p-2 rounded' value={values.name}
               onChange={e => setValues({ ...values, name: e.target.value })} />
           </div>
@@ -51,7 +52,7 @@ const Create = () => {
           </div>
           <div className='mb-2 d-flex'>
             <label htmlFor='designation' className="m-2 w-25"><strong>Designation :</strong></label>
-            <input type="designation" placeholder='Enter your designation' name='designation'
+            <input type="text" placeholder='Enter your designation' name='designation'
               className='form-control p-2 rounded' value={values.designation}
               onChange={e => setValues({ ...values, designation: e.target.value })} />
           </div>
